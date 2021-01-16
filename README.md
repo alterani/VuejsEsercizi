@@ -13,6 +13,10 @@ esempio:
 
 permette di inserire codice html a differenza delle doppie parentesi graffe {{}} che vendono interpretate come testo.
 
-````<p>Using mustaches: {{ rawHtml }}</p>
-<p>Using v-html directive: <span v-html="rawHtml"></span></p> ```
-````
+```
+<p> Using mustaches: {{ rawHtml }}</p>
+
+
+<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+
+```
