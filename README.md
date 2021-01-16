@@ -20,3 +20,21 @@ permette di inserire codice html a differenza delle doppie parentesi graffe {{}}
 <p>Using v-html directive: <span v-html="rawHtml"></span></p>
 
 ```
+
+### v-bind
+
+la direttiva v-bind viene usata per modificare dinamicamente gli attributi degli elementi html.
+
+`<div v-bind:id="dynamicId"></div> `
+
+### {{ }}
+
+nelle doppie parentesi graffe è possibile inserire anche dei comandi javascript.
+
+```
+<!-- this is a statement, not an expression: -->
+{{ var a = 1 }}
+
+<!-- flow control won't work either, use ternary expressions -->
+{{ if (ok) { return message } }}
+```
