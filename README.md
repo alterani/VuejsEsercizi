@@ -38,6 +38,8 @@ I componenti sono degli oggetti riutilizzabili
 </div>
 ```
 
+#### Albero dei componenti
+
 ![Albero dei componenti](nested-components.png)
 
 ### v-on oppure @ (Gesitone Eventi)
