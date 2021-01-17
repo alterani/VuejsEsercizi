@@ -2,6 +2,51 @@
 
 Studio della documentazione ufficiale della libreria/framework VueJs
 
+### Array Change Detection
+
+ue wraps an observed array’s mutation methods so they will also trigger view updates. The wrapped methods are:
+
+- push()
+- pop()
+- shift()
+- unshift()
+- splice()
+- sort()
+- reverse()
+
+### CREARE un'istanza versione vue js 2
+
+```
+var vm = new Vue({
+  // options
+})
+
+```
+
+```
+// Our data object
+var data = { a: 1 }
+
+// The object is added to a Vue instance
+var vm = new Vue({
+  data: data
+})
+
+// Getting the property on the instance
+// returns the one from the original data
+vm.a == data.a // => true
+
+// Setting the property on the instance
+// also affects the original data
+vm.a = 2
+data.a // => 2
+
+// ... and vice-versa
+data.a = 3
+vm.a // => 3
+
+```
+
 ### v-once
 
 questa direttiva assicura il data-binding sono una volta e poi non modifica più l'elemento.
@@ -48,6 +93,54 @@ nelle doppie parentesi graffe è possibile inserire anche dei comandi javascript
 esempio
 
 `<p v-if="seen">Now you see me</p> `
+
+```
+<template v-if="ok">
+  <h1>Title</h1>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+</template>
+
+```
+
+### v-else
+
+```
+<div v-if="Math.random() > 0.5">
+  Now you see me
+</div>
+<div v-else>
+  Now you don't
+</div>
+```
+
+### v-else-if
+
+```
+<div v-if="type === 'A'">
+  A
+</div>
+<div v-else-if="type === 'B'">
+  B
+</div>
+<div v-else-if="type === 'C'">
+  C
+</div>
+<div v-else>
+  Not A/B/C
+</div>
+```
+
+### v-show
+
+La direttiva v-show lavora allo stemmo modo di v-if ma c'è una differenza a livello browser:
+v-if nasconde l'elemento mentre v-show lo distrugge ed eventualmente lo ricrea.
+
+######
+
+v-show non ha else
+
+v-show non funziona con i template.
 
 ### Perticolri usi delle direttive
 
@@ -99,4 +192,27 @@ Vue.createApp({
     }
   }
 }).mount('#computed-basics')
+```
+
+### v-for
+
+```
+<ul id="example-1">
+  <li v-for="item in items" :key="item.message">
+    {{ item.message }}
+  </li>
+</ul>
+
+```
+
+```
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})
 ```
