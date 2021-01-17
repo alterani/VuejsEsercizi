@@ -7,6 +7,18 @@
     <title>Document</title>
   </head>
   <body>
+    <p class="enricoClass">V-MODEL</p>
+
+    <div id="divVmodel" class="demo">
+      <input v-model="message" :placeholder="place" />
+      <p>Message is: {{ message }}</p>
+      <br /><br />
+      <span>Multiline message is:</span>
+      <p style="white-space: pre-line">{{ message2 }}</p>
+      <br />
+      <textarea v-model="message2" placeholder="add multiple lines"></textarea>
+    </div>
+
     <p class="enricoClass">COMPONENT con cliclo for e lista</p>
 
     <div id="todo-list-example" class="demo">

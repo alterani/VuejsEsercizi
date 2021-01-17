@@ -9,6 +9,15 @@ new Vue({
   },
 });
 
+new Vue({
+  el: "#divVmodel",
+  data: {
+    message: "Messaggio",
+    message2: "Messaggio numero 2 - multiline",
+    place: "en scrivi qualcosa",
+  },
+});
+
 Vue.component("todo-item", {
   template:
     "\

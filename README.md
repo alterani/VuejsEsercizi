@@ -2,6 +2,91 @@
 
 Studio della documentazione ufficiale della libreria/framework VueJs
 
+### COMPONENTI
+
+#### Importante: nei componenti i dati sono una funzione.
+
+```
+// Define a new component called button-counter
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+```
+
+```
+<div id="components-demo">
+  <button-counter></button-counter>
+</div>
+```
+
+```
+new Vue({ el: '#components-demo' })
+```
+
+I componenti sono degli oggetti riutilizzabili
+
+```
+<div id="components-demo">
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+</div>
+```
+
+![Albero dei componenti](nested-components.png)
+
+### v-on oppure @ (Gesitone Eventi)
+
+```
+<div id="example-1">
+  <button v-on:click="counter += 1">Add 1</button>
+  <p>The button above has been clicked {{ counter }} times.</p>
+</div>
+
+```
+
+```
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
+```
+
+#### Event Modifiers
+
+- stop
+- prevent
+- capture
+- self
+- once
+- passive
+
+#### Key Modifiers
+
+```
+<!-- only call `vm.submit()` when the `key` is `Enter` -->
+<input v-on:keyup.enter="submit">
+```
+
+- enter
+- tab
+- delete (captures both “Delete” and “Backspace” keys)
+- esc
+- space
+- up
+- down
+- left
+- right
+
+Per maggiori info https://vuejs.org/v2/guide/events.html
+
 ### Array Change Detection
 
 ue wraps an observed array’s mutation methods so they will also trigger view updates. The wrapped methods are:
