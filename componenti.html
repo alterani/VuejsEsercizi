@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="enrico.css" />
-    <title>Document</title>
+    <title>Vue js 2</title>
   </head>
   <body>
     <p class="enricoClass">Componenti le props</p>
 
     <div id="elencoPost" class="demo">
       <h2>{{nomepagina}}</h2>
-      <blog-post
-        v-for="post in elencoPost"
-        v-bind:key="post.id"
-        v-bind:title="post"
-      >
-      </blog-post>
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+          v-for="post in elencoPost"
+          v-bind:key="post.id"
+          v-bind:post="post"
+          v-on:enlarge-text="postFontSize += 0.1"
+        >
+        </blog-post>
+      </div>
     </div>
 
     <p class="enricoClass">V-MODEL</p>

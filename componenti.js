@@ -1,6 +1,14 @@
 Vue.component("blog-post", {
-  props: ["title"],
-  template: "<h5>{{ title.titolo  + ': '+title.descrizione }}</h5>",
+  props: ["post"],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.titolo }}</h3>
+      <div v-html="post.descrizione"></div>
+      <button v-on:click="$emit('enlarge-text')">
+        Allarga testo
+      </button>
+    </div>
+  `,
 });
 
 //Creaiamo app elenco post
@@ -14,6 +22,7 @@ new Vue({
       { id: 102, titolo: "Google", descrizione: "questo post parla di Google" },
       { id: 103, titolo: "Amazon", descrizione: "questo post parla di Amazon" },
     ],
+    postFontSize: 1,
   },
 });
 
