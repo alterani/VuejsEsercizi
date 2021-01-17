@@ -90,6 +90,34 @@ new Vue({
     </div>
 ```
 
+##### $emit creazione eventi che posso essere ascoltari dal parent
+
+Grazie al comanto $emit è possibile generare eventi sul componente
+figlio e propagarli verso il padre.
+
+```
+<button v-on:click="$emit('enlarge-text', 0.1)">
+  Enlarge text
+</button>
+```
+
+```
+<blog-post
+  ...
+  v-on:enlarge-text="postFontSize += $event"
+></blog-post>
+
+```
+
+oppure se l'event handler è un metodo scrivere così
+
+```
+<blog-post
+  ...
+  v-on:enlarge-text="onEnlargeText"
+></blog-post>
+```
+
 ### v-on oppure @ (Gesitone Eventi)
 
 ```
