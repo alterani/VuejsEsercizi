@@ -7,6 +7,18 @@
     <title>Document</title>
   </head>
   <body>
+    <p class="enricoClass">Componenti le props</p>
+
+    <div id="elencoPost" class="demo">
+      <h2>{{nomepagina}}</h2>
+      <blog-post
+        v-for="post in elencoPost"
+        v-bind:key="post.id"
+        v-bind:title="post"
+      >
+      </blog-post>
+    </div>
+
     <p class="enricoClass">V-MODEL</p>
 
     <div id="divVmodel" class="demo">

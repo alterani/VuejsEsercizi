@@ -40,7 +40,55 @@ I componenti sono degli oggetti riutilizzabili
 
 #### Albero dei componenti
 
+c'è un componente root e poi a cascata tutti i componenti innestasti.
+
 ![Albero dei componenti](nested-components.png)
+
+#### Props
+
+Per passare i dati ad un componete come degli attibuti si usano le props,
+vedi esempio sotto.
+
+##### Registriamo un componente post
+
+```
+Vue.component("blog-post", {
+  props: ["title"],
+  template: "<h5>{{ title.titolo  + ': '+title.descrizione }}</h5>",
+});
+```
+
+questo componente prende in input un oggetto attraverso la prop: title.
+
+##### registriamo l'app root che contiene anche i dati oltre che un riferimento al div "elencoPost".
+
+```
+new Vue({
+  el: "#elencoPost",
+  data: {
+    nomepagina: "Elenco post",
+    elencoPost: [
+      { id: 101, titolo: "Apple", descrizione: "questo post parla di Apple" },
+      { id: 102, titolo: "Google", descrizione: "questo post parla di Google" },
+      { id: 103, titolo: "Amazon", descrizione: "questo post parla di Amazon" },
+    ],
+  },
+});
+```
+
+##### Alleghiamo al div root elencoPost il componente blog-post tante volte quanti sono gli elementi dell'array di data.elencopost, ciclicamente valorizziamo la prop.
+
+```
+  <div id="elencoPost" class="demo">
+      <h2>{{nomepagina}}</h2>
+      <blog-post
+        v-for="post in elencoPost"
+        v-bind:key="post.id"
+        v-bind:title="post"
+      >
+      </blog-post>
+    </div>
+```
 
 ### v-on oppure @ (Gesitone Eventi)
 

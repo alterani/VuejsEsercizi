@@ -1,3 +1,22 @@
+Vue.component("blog-post", {
+  props: ["title"],
+  template: "<h5>{{ title.titolo  + ': '+title.descrizione }}</h5>",
+});
+
+//Creaiamo app elenco post
+
+new Vue({
+  el: "#elencoPost",
+  data: {
+    nomepagina: "Elenco post",
+    elencoPost: [
+      { id: 101, titolo: "Apple", descrizione: "questo post parla di Apple" },
+      { id: 102, titolo: "Google", descrizione: "questo post parla di Google" },
+      { id: 103, titolo: "Amazon", descrizione: "questo post parla di Amazon" },
+    ],
+  },
+});
+
 new Vue({
   el: "#v-for-object",
   data: {
