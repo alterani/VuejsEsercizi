@@ -120,7 +120,7 @@ oppure se l'event handler è un metodo scrivere così
 
 ### I componenti possono essere dinamici
 
-Grazie alla al tag is è possibile caricare dinamicamente i componenti nel virtual DOM, vedi i due esempi che nei rispettivi file componente-dinamico1.html e componente-dinamico2.html
+Grazie al tag `is` è possibile caricare dinamicamente i componenti nel virtual DOM, vedi i due esempi che nei rispettivi file `componente-dinamico1.html` e ` componente-dinamico2.html`
 
 ### v-on oppure @ (Gesitone Eventi)
 
