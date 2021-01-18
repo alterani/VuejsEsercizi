@@ -90,9 +90,9 @@ new Vue({
     </div>
 ```
 
-##### $emit creazione eventi che posso essere ascoltari dal parent
+##### $emit creazione eventi che posso essere ascoltati dal parent
 
-Grazie al comanto $emit è possibile generare eventi sul componente
+Grazie al comando $emit è possibile generare eventi sul componente
 figlio e propagarli verso il padre.
 
 ```
@@ -117,6 +117,10 @@ oppure se l'event handler è un metodo scrivere così
   v-on:enlarge-text="onEnlargeText"
 ></blog-post>
 ```
+
+### I componenti possono essere dinamici
+
+Grazie alla al tag is è possibile caricare dinamicamente i componenti nel virtual DOM, vedi i due esempi che nei rispettivi file componente-dinamico1.html e componente-dinamico2.html
 
 ### v-on oppure @ (Gesitone Eventi)
 
